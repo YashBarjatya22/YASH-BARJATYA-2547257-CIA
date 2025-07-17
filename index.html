@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="tailwind.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?authuser=0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Shop Explorer Web App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com/?authuser=0"></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-gray-100 text-gray-850">
+  <header class="bg-white shadow-md">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600 flex items-center gap-2">
+        <i class="fas fa-home"></i> EXAM SITE
+      </h1>
+      
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <i class="fas fa-bars w-6 h-6"></i>
+      </button>
+    </nav>
+    
+  </header>
+  
+  <section class="relative w-full h-[50vh] flex items-center justify-center bg-cover bg-center mb-8" style="background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 text-center text-white px-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">E-Shop Explorer Web App</h1>
+      <p class="text-lg md:text-2xl mb-6 font-medium drop-shadow">Find the best products, deals, and more!</p>
+    </div>
+  </section>
+  <section class="container mx-auto my-8 p-6 bg-white rounded shadow flex flex-col items-center">
+    <h2 class="text-2xl font-bold mb-4 text-center">Product Video</h2>
+    <video controls class="w-full max-w-2xl rounded shadow" preload="auto">
+      <source src="cia-2/Set1_Video.mp4" type="video/mp4">
+    </video>
+    <div class="container mx-auto p-6">
+      <h1 class="text-2xl font-bold mb-4 text-center">Product List</h1>
+      <div class="flex flex-wrap gap-4 justify-center mb-6">
+        <input id="title" type="text" placeholder="Search by title" class="border p-2 rounded w-64 focus:ring-2 focus:ring-blue-500" />
+        <select id="sortPrice" class="border p-2 rounded focus:ring-2 focus:ring-blue-500">
+          <option value="">Sort by Price</option>
+          <option value="low">Low to High</option>
+          <option value="high">High to Low</option>
+        </select>
+      </div>
+      <div id="products" class="flex flex-wrap gap-6 justify-center"></div>
+    </div>
+  </section>
+  <div id="products" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4"></div>
+  <div class="flex flex-col items-center my-6">
+    <button onclick="getLocation()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:ring-2 focus:ring-blue-500">Get My Location</button>
+    <p id="locationDisplay" class="mt-2 text-gray-600"></p>
+  </div>
+  <div class="max-w-md mx-auto bg-white shadow-md p-6 rounded my-6">
+    <h2 class="text-xl font-semibold mb-4">Product Inquiry</h2>
+    <form id="contactForm" class="flex flex-col gap-3">
+      <input type="text" id="userName" placeholder="Your Name" class="border px-3 py-2 rounded focus:ring-2 focus:ring-green-500" required />
+      <input type="email" id="userEmail" placeholder="Your Email" class="border px-3 py-2 rounded focus:ring-2 focus:ring-green-500" required />
+      <input type="text" id="productInterest" placeholder="Product you are interested in" class="border px-3 py-2 rounded focus:ring-2 focus:ring-green-500" required />
+      <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:ring-2 focus:ring-green-500">Submit</button>
+    </form>
+    <p id="formStatus" class="text-green-600 mt-2"></p>
+  </div>
+</body>
+</html>
